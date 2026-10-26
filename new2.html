@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="id" oncontextmenu="return false;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BANK KECIL TOTO12 MALAM</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --neon-cyan: #00f0ff;
+    --neon-purple: #a855f7;
+    --neon-pink: #ff2d95;
+    --neon-orange: #ff9f1c;
+    --bg-dark: #0a0a1a;
+  }
+
+  html, body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: 'Segoe UI', 'Orbitron', sans-serif;
+    background: var(--bg-dark);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0, 240, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 240, 255, 0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.25), transparent 70%);
+    top: -200px;
+    right: -200px;
+    filter: blur(60px);
+    z-index: 0;
+    pointer-events: none;
+    animation: floatOrb 8s ease-in-out infinite;
+  }
+
+  @keyframes floatOrb {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-40px, 40px); }
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    background: rgba(15, 15, 35, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 240, 255, 0.25);
+    border-radius: 20px;
+    padding: 32px 28px 20px;
+    box-shadow:
+      0 0 40px rgba(0, 240, 255, 0.15),
+      0 0 80px rgba(168, 85, 247, 0.1),
+      inset 0 0 30px rgba(0, 240, 255, 0.03);
+    width: 100%;
+    max-width: 440px;
+    animation: containerIn 0.6s ease-out;
+  }
+
+  @keyframes containerIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .container::before,
+  .container::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--neon-cyan);
+    pointer-events: none;
+  }
+  .container::before {
+    top: -1px; left: -1px;
+    border-right: none; border-bottom: none;
+    border-radius: 8px 0 0 0;
+    box-shadow: -2px -2px 12px rgba(0, 240, 255, 0.5);
+  }
+  .container::after {
+    bottom: -1px; right: -1px;
+    border-left: none; border-top: none;
+    border-radius: 0 0 8px 0;
+    box-shadow: 2px 2px 12px rgba(0, 240, 255, 0.5);
+  }
+
+  .logo-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .logo-wrap img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.6));
+    animation: logoGlow 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes logoGlow {
+    0%, 100% { filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.5)); }
+    50% { filter: drop-shadow(0 0 22px rgba(168, 85, 247, 0.7)); }
+  }
+
+  h2 {
+    text-align: center;
+    color: #e0e0ff;
+    margin-bottom: 24px;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow:
+      0 0 10px rgba(0, 240, 255, 0.6),
+      0 0 20px rgba(0, 240, 255, 0.3);
+    font-weight: 700;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #8fa3d0;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 18px;
+    font-family: 'Consolas', monospace;
+    color: #e0e0ff;
+    background: rgba(0, 240, 255, 0.05);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    border-radius: 10px;
+    margin-bottom: 18px;
+    outline: none;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+  input[type="text"]::placeholder {
+    color: rgba(143, 163, 208, 0.4);
+  }
+  input[type="text"]:focus {
+    border-color: var(--neon-cyan);
+    box-shadow:
+      0 0 0 3px rgba(0, 240, 255, 0.1),
+      0 0 20px rgba(0, 240, 255, 0.25);
+    background: rgba(0, 240, 255, 0.08);
+  }
+
+  .options {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .option-btn {
+    flex: 1;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Consolas', monospace;
+    border: 1px solid rgba(0, 240, 255, 0.4);
+    background: rgba(0, 240, 255, 0.05);
+    color: var(--neon-cyan);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+  }
+  .option-btn:hover {
+    background: rgba(0, 240, 255, 0.12);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+  }
+  .option-btn.active {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.25), rgba(168, 85, 247, 0.25));
+    border-color: var(--neon-cyan);
+    color: #fff;
+    box-shadow:
+      0 0 25px rgba(0, 240, 255, 0.4),
+      inset 0 0 15px rgba(0, 240, 255, 0.15);
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
+  }
+
+  .result-box {
+    background: rgba(0, 240, 255, 0.04);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+  .result-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+    pointer-events: none;
+  }
+  .result-box:hover::before {
+    transform: translateX(100%);
+  }
+  .result-box:hover {
+    background: rgba(0, 240, 255, 0.08);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.25);
+    transform: translateY(-2px);
+  }
+  .result-box:active { transform: scale(0.98); }
+
+  .result-box.static {
+    background: rgba(255, 159, 28, 0.05);
+    border-color: rgba(255, 159, 28, 0.35);
+  }
+  .result-box.static:hover {
+    background: rgba(255, 159, 28, 0.1);
+    border-color: var(--neon-orange);
+    box-shadow: 0 0 25px rgba(255, 159, 28, 0.3);
+  }
+
+  .result-label {
+    font-size: 10px;
+    color: #6b7ba8;
+    margin-bottom: 6px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .result-value {
+    font-size: 30px;
+    font-weight: 800;
+    font-family: 'Consolas', monospace;
+    color: #fff;
+    text-shadow:
+      0 0 10px rgba(0, 240, 255, 0.6),
+      0 0 20px rgba(0, 240, 255, 0.3);
+    letter-spacing: 1px;
+    word-break: break-all;
+  }
+  .result-box.static .result-value {
+    text-shadow:
+      0 0 10px rgba(255, 159, 28, 0.6),
+      0 0 20px rgba(255, 159, 28, 0.3);
+  }
+
+  .copy-hint {
+    font-size: 10px;
+    color: #6b7ba8;
+    margin-top: 8px;
+    letter-spacing: 1px;
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 22px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0, 240, 255, 0.15);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #6b7ba8;
+    text-transform: uppercase;
+  }
+  .footer span {
+    color: var(--neon-cyan);
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+  }
+  .footer .brand {
+    color: var(--neon-pink);
+    text-shadow: 0 0 8px rgba(255, 45, 149, 0.6);
+  }
+
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(120px);
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.9), rgba(168, 85, 247, 0.9));
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 14px;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    pointer-events: none;
+    z-index: 999;
+    box-shadow:
+      0 0 30px rgba(0, 240, 255, 0.5),
+      0 0 60px rgba(168, 85, 247, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="logo-wrap">
+    <img src="https://i.ibb.co.com/BH7zQysh/toto12-ezgif-com-resize.gif" alt="Logo" draggable="false">
+  </div>
+
+  <h2>BANK KECIL TOTO12 MALAM</h2>
+
+  <label>PILIH BIAYA ADMIN</label>
+  <div class="options">
+    <button class="option-btn active" data-value="2500" onclick="pilihNominal(this)">2.500</button>
+    <button class="option-btn" data-value="6500" onclick="pilihNominal(this)">6.500</button>
+  </div>
+
+  <label>Input NOMINAL</label>
+  <input type="text" id="inputAngka" placeholder="Contoh: 100.000" oninput="hitung()" autocomplete="off" spellcheck="false">
+
+  <label>Hasil</label>
+  <div class="result-box" onclick="copyElemen('hasil', this)">
+    <div class="result-label">Klik untuk copy</div>
+    <div class="result-value" id="hasil">0</div>
+    <div class="copy-hint">📋 Tap untuk menyalin</div>
+  </div>
+
+  <label>Nilai Tetap</label>
+  <div class="result-box static" onclick="copyElemen('teksTetap', this)">
+    <div class="result-label">Klik untuk copy</div>
+    <div class="result-value" id="teksTetap">258159</div>
+    <div class="copy-hint">📋 Tap untuk menyalin</div>
+  </div>
+
+  <div class="footer">
+    Created by <span>JAGOAN MANUAL MALAM</span> <span class="brand">TOTO12</span>
+  </div>
+</div>
+
+<div class="toast" id="toast">✅ Berhasil dicopy!</div>
+
+<script>
+  /* ============================================
+     PROTEKSI — Anti klik kanan, anti inspect, anti Ctrl+U, dll
+     ============================================ */
+
+  // 1. Nonaktifkan klik kanan di seluruh dokumen
+  document.addEventListener('contextmenu', e => e.preventDefault());
+
+  // 2. Nonaktifkan shortcut keyboard berbahaya
+  document.addEventListener('keydown', e => {
+    const key = (e.key || '').toLowerCase();
+
+    // F12 → buka DevTools
+    if (e.key === 'F12') {
+      e.preventDefault();
+      return false;
+    }
+
+    // Ctrl+Shift+I / J / C / K → DevTools (inspect, console, dll)
+    if (e.ctrlKey && e.shiftKey && ['i', 'j', 'c', 'k'].includes(key)) {
+      e.preventDefault();
+      return false;
+    }
+
+    // Ctrl+U → view source
+    if (e.ctrlKey && key === 'u') {
+      e.preventDefault();
+      return false;
+    }
+
+    // Ctrl+S → save page
+    if (e.ctrlKey && key === 's') {
+      e.preventDefault();
+      return false;
+    }
+
+    // Ctrl+A → select all
+    if (e.ctrlKey && key === 'a') {
+      e.preventDefault();
+      return false;
+    }
+
+    // Ctrl+P → print
+    if (e.ctrlKey && key === 'p') {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // 3. Nonaktifkan drag pada gambar & elemen
+  document.addEventListener('dragstart', e => e.preventDefault());
+
+  // 4. Deteksi DevTools terbuka (trik ukuran jendela)
+  (function deteksiDevTools() {
+    const threshold = 160;
+    setInterval(() => {
+      const widthDiff = window.outerWidth - window.innerWidth > threshold;
+      const heightDiff = window.outerHeight - window.innerHeight > threshold;
+      if (widthDiff || heightDiff) {
+        document.body.innerHTML = `
+          <div style="display:flex;justify-content:center;align-items:center;
+                      height:100vh;background:#0a0a1a;color:#00f0ff;
+                      font-family:'Segoe UI',sans-serif;text-align:center;padding:20px;">
+            <div>
+              <h1 style="font-size:28px;margin-bottom:12px;text-shadow:0 0 20px #00f0ff;">
+                ⚠️ AKSES DITOLAK
+              </h1>
+              <p style="color:#8fa3d0;letter-spacing:1px;">
+                Tutup DevTools untuk melanjutkan.
+              </p>
+            </div>
+          </div>`;
+      }
+    }, 1000);
+  })();
+
+  // 5. Blokir iframe embedding (anti-embed di situs lain)
+  if (window.top !== window.self) {
+    document.body.innerHTML = '';
+  }
+
+  /* ============================================
+     LOGIKA KALKULATOR
+     ============================================ */
+
+  let nominalPilihan = 2500;
+
+  function pilihNominal(btn) {
+    document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    nominalPilihan = parseInt(btn.dataset.value);
+    hitung();
+  }
+
+  function formatRupiah(angka) {
+    return angka.toLocaleString('id-ID');
+  }
+
+  function parseAngka(str) {
+    const bersih = str.replace(/[^\d]/g, '');
+    return bersih ? parseInt(bersih) : 0;
+  }
+
+  function hitung() {
+    const input = document.getElementById('inputAngka');
+    const hasilEl = document.getElementById('hasil');
+    const nilai = parseAngka(input.value);
+
+    if (!input.value) {
+      hasilEl.textContent = '0';
+      return;
+    }
+
+    hasilEl.textContent = formatRupiah(nilai - nominalPilihan);
+  }
+
+  function copyElemen(idElemen, boxEl) {
+    const teks = document.getElementById(idElemen).textContent;
+    if (teks === '0') return;
+
+    const teksCopy = (idElemen === 'teksTetap')
+      ? teks
+      : teks.replace(/\./g, '');
+
+    navigator.clipboard.writeText(teksCopy).then(() => {
+      tampilkanToast('✅ Tersalin: ' + teksCopy);
+
+      const hint = boxEl.querySelector('.copy-hint');
+      const hintAwal = hint.textContent;
+      hint.textContent = '✅ Tersalin: ' + teksCopy;
+      setTimeout(() => hint.textContent = hintAwal, 2000);
+    }).catch(() => {
+      const temp = document.createElement('textarea');
+      temp.value = teksCopy;
+      temp.style.position = 'fixed';
+      temp.style.opacity = '0';
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand('copy');
+      document.body.removeChild(temp);
+      alert('Tersalin: ' + teksCopy);
+    });
+  }
+
+  function tampilkanToast(msg) {
+    const toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
+  }
+</script>
+
+</body>
+</html>
